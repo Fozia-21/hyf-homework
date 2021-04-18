@@ -173,7 +173,6 @@ p {
             }
             footer{
                 flex-direction: column;
-                column-gap: 50px 50px 50px 50px;
             }
             .logos{
                 grid-template-columns: 70px 70px;
