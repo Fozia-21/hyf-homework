@@ -1,0 +1,243 @@
+<style>
+*{
+box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    font-family:inherit;
+}/*styling form*/
+.form
+{
+    width:90%;
+    border: 1px solid black;
+
+}/*styling list of hyperlinks in navigation bar*/
+nav ul{
+    list-style: none;
+    display: flex;
+     float: right;
+     padding-top: 40px;
+}
+
+header{
+    display:flex ;
+    justify-content: space-between;
+}
+nav ul li{
+    text-decoration:none;
+    padding: 30px;
+    font-size:xx-large ;
+    font-weight: bold;
+
+
+}
+.main {
+    padding-left: 30px;
+}/*styling hyperlinks*/
+a{
+    text-decoration: none;
+    color:black;
+    border: none;
+}
+h1{
+    font-size: 50px;
+}
+p{
+    font-size: 25px;
+}
+h2{
+    font-size: 35px;
+}/*styling progress bar*/
+progress[value] {
+    width: 95%;
+    height: 110px;
+  }/*name for all input and select types*/
+  label{
+      font-size: 22px;
+      font-weight: bold;
+      padding:20px;
+
+  }
+  
+input,select{
+    width:40%;
+    height:50px;
+    border-radius: 10px;
+
+}
+.textfield-table{
+    display: flex;
+    
+}/*styling left column in main class*/
+.column-left{
+    width:50%;
+    text-align: right;
+}
+.column-right{
+    width:50%;
+    text-align: center;
+
+}/*styling paragraph in section element*/
+section p{
+    font-size: 15px;
+    font-style: italic;
+}
+section{
+    display: flex;
+    padding-left: 130px;
+}
+
+textarea {
+    width:70%;
+    height: 150px;
+    border-radius: 10px;
+
+}
+.shipping {
+    float: left;
+    padding-bottom: 100px;
+    text-align: center;
+
+}
+/*tried to add invisible section on page which will be visible by checking
+the checkbox but unfortunately not working */
+.textfield-table .invisible {
+   display:none;
+
+}
+
+input[type=checkbox]:checked ~ .invisible
+{
+    display:inline-block;
+}
+.submit {
+    text-align: right ;
+    padding-bottom: 80px;
+    padding-right: 30px;
+    padding-top:80px;
+    cursor: pointer;
+}
+.submit button{
+    width: 300px;
+    height: 100px;
+    background-color: cornflowerblue;
+    color:black;
+    font-size:x-large;
+    font-weight: bold;
+}/*class for page 2*/
+.flex-container{
+    width:100%;
+    display: flex
+
+    
+}
+.leftcolumn{
+    width: 100%;
+    text-align: right;
+    
+
+
+}
+.rightcolumn{
+    width: 100%;
+    text-align: center;
+}/*styling radio buttons*/
+.radio{
+    display: flex;
+    padding-bottom: 100px;
+    padding-right:60px;
+    justify-content: space-between;
+
+
+   
+}/*styling page 3*/
+.checkbox-options{
+    display: flex;
+
+}
+.grid{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding-bottom: 100px;
+    
+}/*Applying media query for all pages within width of from 411 to 698,for viewing pages on mobile or ipad viewport(screen)*/
+@media screen and (min-width: 411px) and (max-width: 698px) {
+    header{
+        display:block;
+    }
+    .form{
+        width:90%;
+    }
+    .logo{
+        text-align: center;
+    
+    }
+    nav ul,a{
+        display:flex;
+        justify-content: space-evenly;
+        font-size:large;
+    }
+    h1{
+        display: inline-block;
+       font-size: 30px;
+    }
+    .textfield-table{
+        display: block;
+        width:100%;
+        flex-direction:column ;
+    }   
+     input,select
+     {  
+        width:100%;
+    }
+    
+    .textfield-table > .column-left{
+        width:92%;
+
+    }
+    .textfield-table > .column-right {
+        width:92%;
+
+    }
+    section{
+        display: flex;
+        flex-direction: column;
+        text-align:left ;
+        padding-left: 30px;
+        width: 100%;
+   
+   }
+    label{
+        font-size: medium;
+        float: left;
+        
+    }
+    .flex-container{
+            display: block;
+            width:100%;
+            flex-direction:column;
+    }
+    .leftcolumn {
+    
+        width :90%;  
+    }
+    .rightcolumn {
+
+        width: 90%;
+
+    }
+    .grid{
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+    }
+    .checkbox-options{
+        display:inline-block ;
+        
+    }
+
+    }
+
+</style>

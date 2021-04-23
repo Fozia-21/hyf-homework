@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="forms.css" >
+    <title>My test page</title>
+  </head>
+  <body>
+      <div class="form">
+    <form action="/my-handling-form-page" method="post">
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="logo" width="200px" height="200px">
+                </div>
+                    <nav>
+                    <ul>
+                      <li> <a href="index.html">Home</a></li>
+                       <li> <a href="index2.html">Info</a></li>
+                        <li><a href="index3.html">Style</a></li>
+                    </ul>
+                    </nav>
+        </header>
+        <div class="main">
+        <h1>
+            Sign up to yourcustomtailor.com
+        </h1>
+        <h2>Step 3/4 - Time to learn about your preferences?</h2>
+        <div class="progressbar">
+        <label for="bar">Progress</label>
+        <progress id="bar" value = "65" max = "100"></progress><!--progressbar for step 3-->
+        </div>
+        <p>what kind of items you are interested in offers on?</p>
+        <div class="checkbox-options"><!--making check boxes-->
+          <label for="apparal">Apparal</label>
+        <input type="checkbox" id="apparal" name="Apparal" value="clothes">
+        <label for="jewelry">Jewelry</label><br>
+        <input type="checkbox" id="jewelery" name="Jewelery" value="Jewelery">
+        <label for="accessories">Accessories</label>
+        <input type="checkbox" id="accessories" name="Accessories" value="Accessories">
+        <label for="shoes">Shoes</label><br>
+        <input type="checkbox" id="shoes" name="Shoes" value="Shoes">
+        <label for="handbags">Handbags</label>
+        <input type="checkbox" id="handbags" name="Handbags" value="Handbags">
+        
+        </div>
+        <p>Choose the images that resemble your style</p><br>
+        <div class="grid">
+          <div id="leftimages"><!--checkboxes with image label-->
+        <input type="checkbox" id="Checkbox1" />
+        <label for="Checkbox1"><img src="images/image1.jpg" width="200px" height="250px"></Select></label>
+        <input type="checkbox" id="Checkbox2" />
+        <label for="Checkbox2"><img src="images/image2.jpg" width="200px" height="250px"></label>
+        <input type="checkbox" id="Checkbox3" />
+        <label for="Checkbox3"><img src="images/image3.jpg" width="200px" height="250px"></label>
+        <input type="checkbox" id="Checkbox4" />
+        <label for="Checkbox4"><img src="images/image4.jpg" width="200px" height="250px"></label><br>
+         </div>
+         <div id="rightimages">
+        
+        <label for="Checkbox10"><img src="images/image10.jpg" width="200px" height="250px"></label>
+        <input type="checkbox" id="Checkbox10" />
+        <label for="Checkbox6"><img src="images/image6.jpg" width="200px" height="250px"></label>
+        <input type="checkbox" id="Checkbox6" />
+        
+       
+        <label for="Checkbox9"><img src="images/image9.jpg" width="200px" height="250px"></label>
+        <input type="checkbox" id="Checkbox9" />
+        <label for="Checkbox8"><img src="images/image8.jpg" width="200px" height="250px"></label>
+        <input type="checkbox" id="Checkbox8" /><br><br>
+        
+      </div>  
+      </div><br><br>
+      <div class="submit">
+        
+        <button type="submit"  formaction="index.html" value="Next step">Next step</button>
+         </div>
+
+        </div>
+        </form>
+        </div>
+        </body>
+        </html>
+        
+
+
