@@ -1,12 +1,10 @@
 //Declaring all variables
-let width;
-let height;
-let depth;
-let volumeInMeters;
-let gardenSizeInM2;
-let paidPrice;
-let peterActualHouseCost;
-let juliaActualHouseCost;
+let width,
+ height,
+ depth,
+ volumeInMeters,
+ gardenSizeInM2,
+ paidPrice;
 
 //peter House Price
 width = 8;
@@ -15,9 +13,9 @@ depth = 10;
 gardenSizeInM2 = 100;
 volumeInMeters = width*height*depth;
 paidPrice = volumeInMeters*2.5*1000 + gardenSizeInM2*300;
-console.log("peter has paid:"+" "+paidPrice);
+console.log(`Peter has paid: ${paidPrice}Kr`);
 
-peterActualHouseCost = 2500000;
+const peterActualHouseCost = 2500000;
 //comparing Paid and actual price of house
 
 if(paidPrice < peterActualHouseCost ){
@@ -35,13 +33,14 @@ depth = 11;
 gardenSizeInM2 = 70;
 volumeInMeters = width*height*depth;
 paidPrice = volumeInMeters*2.5*1000 + gardenSizeInM2*300;
-console.log("Julia has paid:"+" "+paidPrice);
+console.log(`Julia has paid: ${paidPrice}kr`);
 
 //Initializing and assigning value to variable
-juliaActualHouseCost = 1000000;
+const juliaActualHouseCost = 1000000;
 
 //comparing Paid and actual price of house
-if(paidPrice < juliaActualHouseCost ) {
+if(paidPrice < juliaActualHouseCost ) 
+{
     console.log("Julia is paying too less");
 }
 else{
