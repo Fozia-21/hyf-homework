@@ -8,3 +8,4 @@ const startupName = firstWords[0] + " " + secondWords[9];//concatenating two arr
 const wordlength = startupName.length;//to determine the length of variable startupname
 
 console.log(`The startup: ${startupName} contains ${wordlength} characters`);
+
