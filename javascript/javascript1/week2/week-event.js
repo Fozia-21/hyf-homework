@@ -1,9 +1,8 @@
 function getEventWeekday(noOfEventDays)
 {
+    const WeekDays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     const today = new Date();
-    const futureEventDay= (today.getDay() + noOfEventDays) % 7;
-    console.log(futureEventDay);
-    const WeekDays=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    console.log(`${WeekDays[futureEventDay]}`);
+    const futureEventDay = (today.getDay() + noOfEventDays) % 7;
+     return WeekDays[futureEventDay];
 }
- getEventWeekday(5);
+ console.log(getEventWeekday(6));
