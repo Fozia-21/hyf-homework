@@ -1,12 +1,10 @@
 const activities = [];
-function addActivity(date , activity , duration){
+function addActivity(date, activity, duration) {
 activities.push( 
     {
-        date : date,
-        activity : activity,
-        duration : duration,
+       date, activity, duration // this is the same as { date: date, activity: activity, duration: duration }
     }
-);
+  );
 }
 console.log(activities);
 
@@ -18,12 +16,12 @@ addActivity("3/7-2021" ,"whattsapp" , 15)
 addActivity("6/8-2021" ,"Instagram" , 40)
 
 //show Status
-let sumOfActivitiesDuration = 0;
 function showStatus(activities)
 {
+  let sumOfActivitiesDuration = 0;
   for(let i = 0 ; i < activities.length ;i++) 
   {
-      sumOfActivitiesDuration = sumOfActivitiesDuration + activities[i].duration;
+      sumOfActivitiesDuration += activities[i].duration;
   } 
   return sumOfActivitiesDuration;
 }
@@ -38,14 +36,14 @@ if(result > limit)
  {
 console.log("limit exceeded , NO more phone is allowed");
  }
-}
+
 
 //Extra Feature
-    if(result < limit)
+    else(result < limit)
       {
         console.log("You still have limit, so more activities are allowed");
       }
  limitOfUse();
 
 
-
+}

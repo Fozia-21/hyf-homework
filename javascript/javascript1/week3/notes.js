@@ -2,11 +2,10 @@ const notes = [];
 
 function saveNote(content, id) 
 {
- const object = {
-     content : content,
-     id : id,
+ const note = {
+     content,id
   };
-  notes.push(object);
+  notes.push(note);
 }
 
 saveNote("Pick up groceries", 1);
@@ -26,7 +25,7 @@ function getNote(id)
           return notes[i];
        }
     }
-        return `irrelevant note object`;
+        return `Note with ID 1 couldn't be found`;
 }
   
   let firstNote = getNote(1);
