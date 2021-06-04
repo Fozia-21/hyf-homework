@@ -4,79 +4,74 @@ let todoArray = [];
 
 function getReply(command)
 {
-    let wordString = command.split(" "); 
-    let KeyWord = wordString[0];  // extract the keyword
-    let nameString;
-    let nameString2;
+    const wordString = command.split(" "); 
+    const keyWord = wordString[0];  // extract the keyword
 
-    switch(KeyWord){
+    let nameCommand;
+
+    switch(keyWord.toLowerCase()){
         //--------------------------------------------------------------//
-        case 'Hello':
-            nameString = wordString[4]; // extract the name (as it is on 4th index)
-            if(nameString == '')
+        case 'hello':
+            nameCommand = wordString[4]; // extract the name (as it is on 4th index)
+            if(!nameCommand)
             {
                 console.log('please enter your name');
             }
             else
             {    
                 // compare with name array and add if not exist or skip if its already exist
-                if(nameArray.includes(nameString.toLowerCase()) )
+                if(nameArray.includes(nameCommand.toLowerCase()) )
                 {
                     console.log('Name already exists, so skipping it');
                 }
                 else
                 {
                     console.log('name do not exists, so adding to the list');
-                    nameArray.push(nameString.toLowerCase()); // add to the array
-                    console.log(`Nice to meet you:  ${nameString} !`);
-                    //console.log(`Total Names in the array ${nameArray.length}`);  
-                }
+                    nameArray.push(nameCommand.toLowerCase()); // add to the array
+                    console.log(`Nice to meet you:  ${nameCommand} !`);
+                  }
         
             }
             break;
 
         //--------------------------------------------------------------
-
-            case 'Add':    
+            case 'add':    
                 
                 if(wordString.length > 4)
                 {
-                    nameString2 = wordString;
-                    nameString2.splice(0, 1); // remove first element
-                    nameString2.splice(-1, 1); // remove last element
-                    nameString2.splice(-1, 1); // remove 2nd last element, whih is infact last now
-                    nameString2 = nameString2.join(' '); // combine element to form the string
+                    todoTask = wordString;
+                    todoTask.splice(0, 1); // remove first element
+                    todoTask.splice(-2);
+                    todoTask = todoTask.join(' '); // combine element to form the string
                 }
                 else
                 {
-                    nameString2 = wordString[1];
+                    todoTask = wordString[1];
                 }
 
-                todoArray.push(nameString2.toLowerCase());
-                console.log(`Added ${nameString2} to myToDo`);
-                //console.log(`Total items in the ToDo  ${todoArray.length}`);
+                todoArray.push(todoTask.toLowerCase());
+                console.log(`Added ${todoTask} to myToDo`);
                 break;
 
-            case 'Remove':    
+            case 'remove':    
                 if(wordString.length > 4)
                 {
-                    nameString2 = wordString;
-                    nameString2.splice(0, 1); // remove first element
-                    nameString2.splice(-1, 1); // remove last element
-                    nameString2.splice(-1, 1); // remove 2nd last element, whih is infact the last now
-                    nameString2 = nameString2.join(' '); // combine element to form the string
+                    todoWords = wordString;
+                    todoWords.splice(0, 1); // remove first element
+                    todoWords.splice(-2);
+                    todoWords = todoWords.join(' '); // combine element to form the string
                 }
                 else
                 {
-                    nameString2 = wordString[1];
+                    todoWords = wordString[1];
                 }
 
                  // check if the item is in the list, before removing it.If exists then remove it.
-                if(todoArray.includes(nameString2.toLowerCase()))
+                if(todoArray.includes(todoWords.toLowerCase()))
                 {
-                    itemIndex = todoArray.indexOf(nameString2);
+                   const itemIndex = todoArray.indexOf(todoWords);
                     todoArray.splice(itemIndex, 1) ; 
-                    console.log(`${nameString2} is removed from myToDo`);              
+                    console.log(`${todoWords} is removed from myToDo`);              
                 }
                 else 
                 {    
@@ -88,27 +83,29 @@ function getReply(command)
 
             
             //----------------------------------
-            case 'What':    
-                nameString2 = wordString;
-                nameString2.splice(0, 1); // remove first element
-                nameString2 = nameString2.join(' '); // combine element to form the string
+            case 'what':    
+                nameCommand = wordString;
+                nameCommand.splice(0, 1); // remove first element
+            
+                nameCommand = nameCommand.join(' '); // combine element to form the string
 
-                if(nameString2 == 'is my name?')
+                if(nameCommand == 'is my name?')
                 {
-                    if(nameArray == ' ') 
+                    if(nameArray.length) 
                     {
-                        console.log('No name exist !');
+                        console.log(`your name is: ${nameArray}`)   
                     }
                     else
                     {
-                        console.log(`your name is: ${nameArray}`)  
+                        console.log('No name exist !');
+                        
                     }
                 }
-                else if(nameString2 == 'is on myToDo?')
+                else if(nameCommand == 'is on myToDo?')
                 {
                    console.log(`ToDo is: ${todoArray}`);  
                 }
-                else if(nameString2 == 'day is today?')
+                else if(nameCommand == 'day is today?')
                 {
             
                     const date = new Date().toDateString().split(" ");
@@ -116,11 +113,10 @@ function getReply(command)
                 }
                 else
                 {
-                    // mathematic operations
-                    let operator = wordString.slice(-2,-1);  // get the maths operator
-                    let operandA = parseInt(wordString.slice(-3,-2));
-                    let operandB = parseInt(wordString.slice(-1));
+                    // mathematic operations              
+                    const [ , operandA, operator, operandB ] = wordString; 
                     let result;
+
                     switch (operator[0])
                     {
                         case '+' :
@@ -149,30 +145,29 @@ function getReply(command)
                         break;
 
                         default:
-                        console.log('Invalid command !');  
+                        console.log(`invalid command !`); 
                         break;  
                     }
                 }           
                 break;
 
             //-----------------------------------------
-            case 'Set':  
-                nameString2 = wordString.slice(1, 3); // get keyword like 'a timer'
-                nameString2 = nameString2.join(' '); // combine element to form the string
-                
-                if(nameString2 == 'a timer')
+            case 'set':  
+                const [ , first, second, , forth, fifth ] = wordString; 
+                      
+                if( [first, ' ', second].join('') == 'a timer')
                 {
-                    let units = wordString.slice(-1); 
-                    let timervalue = wordString.slice(-2,-1);  
+                    let units = fifth; 
+                    let timervalue = forth; 
                     console.log(`Timer set for ${timervalue} ${units}`);  
                     console.log('Waiting for time out ....'); 
                     
                     let timeout;
-                    if((units='seconds') || (units='sec') )
+                    if((units == 'seconds') || (units == 'sec') )
                     {
                         timeout = timervalue *1000;  // represented a milliseconds
                     }    
-                    else if((units = 'minutes') || (units = 'mins') )
+                    else if((units == 'minutes') || (units == 'mins') )
                     {
                         timeout = timervalue * 1000 * 60;  // represented a milliseconds
                     }
@@ -182,11 +177,9 @@ function getReply(command)
                 }
                 break;
 
-
-
             //--------------------------------------------------------------
             default:
-                console.log('invalid command'); 
+                console.log("what it is ?"); 
                 break;
             
     } // end switch
